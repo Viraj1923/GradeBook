@@ -1,0 +1,58 @@
+<!-- read.js -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users</title>
+    <link rel="stylesheet" href="/stylesheets/style2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        <div class="nav mb-10">
+            <a class="text-blue-500" href="/">Add Student</a>
+        </div>
+
+        <h1 class="text-3xl tracking-tighter mb-5">Student List</h1>
+        
+        <table class="w-full text-left bg-zinc-800 border border-zinc-700 rounded-lg">
+            <thead>
+                <tr class="border-b border-zinc-700">
+                    <th class="px-5 py-3">First Name</th>
+                    <th class="px-5 py-3">Last Name</th>
+                    <th class="px-5 py-3">Roll No</th>
+                    <th class="px-5 py-3">Email</th>
+                    <th class="px-5 py-3">Phone No</th>
+                    <th class="px-5 py-3">Subject</th>
+                    <th class="px-5 py-3">Semester</th>
+                    <th class="px-5 py-3">Marks</th>
+                    <th class="px-5 py-3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% user.forEach(user => { %>
+                    <tr class="border-b border-zinc-700">
+                        <td class="px-5 py-3"><%= user.Fname %></td>
+                        <td class="px-5 py-3"><%= user.Lname %></td>
+                        <td class="px-5 py-3"><%= user.rollNo %></td>
+                        <td class="px-5 py-3"><%= user.email %></td>
+                        <td class="px-5 py-3"><%= user.PhNo %></td>
+                        <td class="px-5 py-3"><%= user.subject %></td>
+                        <td class="px-5 py-3"><%= user.semester %></td>
+                        <td class="px-5 py-3"><%= user.marks %></td>
+                        <td class="px-5 py-3 flex gap-3">
+                            <a href="/edit/<%= user._id %>">
+                                <Button>Edit</Button>
+                            </a>
+                            <a href="/delete/<%= user._id %>" onclick="return confirm('Are you sure you want to delete this user?');">
+                                <Button>Delete</Button>
+                            </a>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

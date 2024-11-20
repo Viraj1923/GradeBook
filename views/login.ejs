@@ -1,0 +1,29 @@
+<!-- login.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900">
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        <div class="nav mb-10">
+            <a class="text-blue-500" href="/teacher-register">Register as Teacher</a>
+
+        </div>
+
+        <h1 class="text-3xl tracking-tighter mb-3">Teacher Login</h1>
+        
+        <form action="/teacher-login" method="POST">
+            <div class="inp">
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="userId" type="text" placeholder="User ID" required>
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="password" type="password" placeholder="Password" required>
+                <input class="px-5 py-2 bg-blue-500 rounded-lg ml-3" type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        <h1 class="text-3xl tracking-tighter mb-3">Enter Roll Number</h1>
+        <form action="/view-result" method="post">
+            <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="rollNo" type="text" placeholder="Enter Roll Number" required>
+            <input class="px-5 py-2 bg-blue-500 rounded-lg ml-3" type="submit" value="View Result">
+        </form>
+    </div>
+</body>
+</html>

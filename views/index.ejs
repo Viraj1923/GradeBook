@@ -1,0 +1,44 @@
+<!-- index.js -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add or Edit Student</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900">
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        <div class="nav mb-10">
+            <a class="text-blue-500" href="/read">Show Students</a>
+        </div>
+
+        <h1 class="text-3xl tracking-tighter mb-3">
+            <%= user ? 'Edit Student' : 'Create Student' %>
+        </h1>
+
+        <form action="<%= user ? '/update/' + user._id : '/create' %>" method="post">
+            <div class="inp">
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="Fname" type="text" placeholder="First Name" value="<%= user ? user.Fname : '' %>">
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="Lname" type="text" placeholder="Last name" value="<%= user ? user.Lname : '' %>">
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="rollNo" type="text" placeholder="Roll No" value="<%= user ? user.rollNo : '' %>">
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="email" type="text" placeholder="Email" value="<%= user ? user.email : '' %>">
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="PhNo" type="text" placeholder="Phone No" value="<%= user ? user.PhNo : '' %>">
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="subject" type="text" placeholder="subject" value="<%= user ? user.subject : '' %>">
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="semester" type="text" placeholder="semester" value="<%= user ? user.semester : '' %>">
+                <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="marks" type="text" placeholder="Marks" value="<%= user ? user.marks : '' %>">
+                
+                <!-- Add Result Section -->
+                <!-- <div>
+                    <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="subject" type="text" placeholder="Subject" value="<%= user ? user.subject : '' %>" required>
+                    <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="semester" type="text" placeholder="Semester" value="<%= user ? user.semester : '' %>" required>
+                    <input class="px-5 py-2 border-2 outline-none border-zinc-700 rounded-lg bg-transparent" name="marks" type="number" placeholder="Marks" value="<%= user ? user.marks : '' %>" required>
+                </div> -->
+
+                <input class="px-5 py-2 bg-blue-500 rounded-lg ml-3" type="submit" value="<%= user ? 'Update User' : 'Create User' %>">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
